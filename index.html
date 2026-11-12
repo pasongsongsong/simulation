@@ -23,7 +23,7 @@ h1{margin:0;color:white;font-size:clamp(1.35rem,3vw,2rem);font-weight:950;letter
 .stage{position:absolute;left:50%;top:102px;transform:translateX(-50%);width:170px;height:190px;pointer-events:none;display:flex;align-items:flex-start;justify-content:center;z-index:20}.fly{width:70px;height:70px;border-radius:50%;display:none;align-items:center;justify-content:center;font-weight:950;font-size:1.1rem;opacity:0;transform:translateY(155px) scale(.42);box-shadow:inset -7px -8px 10px rgba(0,0,0,.26),inset 5px 6px 10px rgba(255,255,255,.35),0 12px 22px rgba(40,40,40,.25)}
 .fly.black{display:flex;color:white;background:radial-gradient(circle at 32% 27%,#5b5b5b 0 5%,#1e1e1e 48%,#050505);border:2px solid #050505}.fly.white{display:flex;color:#222;background:radial-gradient(circle at 32% 27%,#fff 0 9%,#fbfbfb 55%,#d5d5d5);border:2px solid #bfc3c7}.out{animation:out var(--draw-ms) ease-out forwards}.ret{animation:ret var(--return-ms) ease-in forwards}@keyframes out{0%{transform:translateY(155px) scale(.42);opacity:0}55%{transform:translateY(38px) scale(.9);opacity:1}100%{transform:translateY(0) scale(1);opacity:1}}@keyframes ret{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(155px) scale(.42);opacity:0}}
 .pill{margin-top:-2px;display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,.88);border-radius:999px;box-shadow:0 7px 18px rgba(76,126,90,.16);font-weight:900;color:#6d5728;text-align:center}
-.controls{width:min(560px,100%);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:64px}.btn{min-height:78px;padding:8px;border:0;border-radius:15px;color:white;cursor:pointer;box-shadow:0 11px 20px rgba(39,103,94,.22);transition:.12s;font-family:inherit}.btn:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.04)}.btn:disabled{opacity:.62;cursor:not-allowed}.num{display:block;font-size:2rem;font-weight:950;line-height:1;text-shadow:0 3px 0 rgba(0,0,0,.1)}.bl{display:block;margin-top:8px;font-weight:950;font-size:.92rem}.b1{background:linear-gradient(135deg,var(--blue1),var(--blue2))}.b10{background:linear-gradient(135deg,var(--green1),var(--green2))}.b100{background:linear-gradient(135deg,var(--orange1),var(--orange2))}.breset{background:linear-gradient(135deg,var(--red1),var(--red2))}
+.controls{width:min(560px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:64px}.btn{min-height:78px;padding:8px;border:0;border-radius:15px;color:white;cursor:pointer;box-shadow:0 11px 20px rgba(39,103,94,.22);transition:.12s;font-family:inherit}.btn:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.04)}.btn:disabled{opacity:.62;cursor:not-allowed}.num{display:block;font-size:2rem;font-weight:950;line-height:1;text-shadow:0 3px 0 rgba(0,0,0,.1)}.bl{display:block;margin-top:8px;font-weight:950;font-size:.92rem}.b1{background:linear-gradient(135deg,var(--blue1),var(--blue2))}.b10{background:linear-gradient(135deg,var(--green1),var(--green2))}.b100{background:linear-gradient(135deg,var(--orange1),var(--orange2))}.b500{background:linear-gradient(135deg,#9b8bfa,#6150bb)}.breset{background:linear-gradient(135deg,var(--red1),var(--red2))}
 .speed{width:min(560px,100%);margin-top:18px;padding:12px 18px;background:rgba(255,255,255,.74);border:1px solid rgba(255,255,255,.85);border-radius:16px;box-shadow:0 7px 18px rgba(76,126,90,.1);display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}.speed label{font-weight:950;color:#36505f;white-space:nowrap}input[type=range]{width:100%;accent-color:#43a8ef}.speed-val{min-width:52px;padding:6px 9px;border-radius:10px;background:white;color:#286db0;font-weight:950;text-align:center;box-shadow:inset 0 0 0 1px #dfe7f3}
 .panel{background:rgba(255,255,255,.94);border-radius:18px;padding:22px 20px 24px;box-shadow:0 12px 30px rgba(62,94,60,.18);border:1px solid rgba(255,255,255,.9)}.panel h2{margin:0 0 14px;text-align:center;font-size:1.35rem;font-weight:950;color:#2d3a48;text-shadow:0 2px 0 rgba(0,0,0,.05)}
 .total{min-height:54px;margin-bottom:14px;border-radius:11px;background:linear-gradient(90deg,var(--p1),var(--p2));color:white;display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;padding:8px 16px;font-weight:950;box-shadow:0 5px 11px rgba(76,60,160,.25)}.total .tlabel{justify-self:end}.count{min-width:64px;text-align:center;border-radius:9px;padding:3px 12px;background:rgba(255,255,255,.20);font-size:1.9rem;line-height:1.2;text-shadow:0 3px 0 rgba(0,0,0,.13)}
@@ -47,6 +47,7 @@ h1{margin:0;color:white;font-size:clamp(1.35rem,3vw,2rem);font-weight:950;letter
 <button class="btn b1" id="draw1"><span class="num">1</span><span class="bl">1번 뽑기</span></button>
 <button class="btn b10" id="draw10"><span class="num">10</span><span class="bl">10번 뽑기</span></button>
 <button class="btn b100" id="draw100"><span class="num">100</span><span class="bl">100번 뽑기</span></button>
+<button class="btn b500" id="draw500"><span class="num">500</span><span class="bl">500번 뽑기</span></button>
 <button class="btn breset" id="reset"><span class="num">↻</span><span class="bl">초기화</span></button>
 </div>
 <div class="speed"><label for="speed">속도</label><input id="speed" type="range" min="1" max="5" value="3"><div class="speed-val" id="speedText">1x</div></div>
@@ -62,7 +63,7 @@ h1{margin:0;color:white;font-size:clamp(1.35rem,3vw,2rem);font-weight:950;letter
 </aside>
 </main>
 <button class="help" id="help">도움말</button>
-<div class="modal-bg" id="modal"><div class="modal"><div class="modal-head"><span>사용 방법</span><button class="close" id="close">×</button></div><div class="modal-body"><p>주머니 안에는 검은색 바둑알과 흰색 바둑알이 모두 100개 들어 있습니다.</p><ul><li>바둑알을 하나 뽑아 색깔을 확인합니다.</li><li>확인한 바둑알은 다시 주머니에 넣습니다.</li><li>1번, 10번, 100번 뽑기를 선택할 수 있습니다.</li></ul></div></div></div>
+<div class="modal-bg" id="modal"><div class="modal"><div class="modal-head"><span>사용 방법</span><button class="close" id="close">×</button></div><div class="modal-body"><p>주머니 안에는 검은색 바둑알과 흰색 바둑알이 모두 100개 들어 있습니다.</p><ul><li>바둑알을 하나 뽑아 색깔을 확인합니다.</li><li>확인한 바둑알은 다시 주머니에 넣습니다.</li><li>1번, 10번, 100번, 500번 뽑기를 선택할 수 있습니다. 500번은 결과를 빠르게 집계합니다.</li></ul></div></div></div>
 <script>
 const BAG={total:100,black:33,white:67}; // 교사용 실제 설정: 검은색 33개, 흰색 67개. 학생 화면에는 표시되지 않음. 화면 속 반투명 주머니 그림은 5:5처럼 보이도록 배치함.
 const speedMap={1:{label:"0.25x",wait:920,draw:390,ret:260},2:{label:"0.5x",wait:620,draw:300,ret:200},3:{label:"1x",wait:390,draw:210,ret:145},4:{label:"2x",wait:170,draw:95,ret:65},5:{label:"4x",wait:42,draw:22,ret:16}};
@@ -75,7 +76,7 @@ const visual=[
 ["black",17,72,18],["white",30,73,17],["black",43,71,18],["white",56,73,17],["black",69,72,18],
 ["white",25,84,17],["black",39,85,18],["white",53,84,17],["black",66,85,18]
 ];
-const $=id=>document.getElementById(id),buttons=[$("draw1"),$("draw10"),$("draw100"),$("reset")];
+const $=id=>document.getElementById(id),buttons=[$("draw1"),$("draw10"),$("draw100"),$("draw500"),$("reset")];
 let running=false,total=0,black=0,white=0,history=[];
 function makeStones(){visual.forEach(([c,x,y,s],i)=>{let e=document.createElement("span");e.className=`vstone ${c}`;e.style.setProperty("--x",x+"%");e.style.setProperty("--y",y+"%");e.style.setProperty("--s",s+"px");e.style.zIndex=i%7;$("stones").appendChild(e)})}
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));function sp(){return speedMap[$("speed").value]||speedMap[3]}function disable(v){buttons.forEach(b=>b.disabled=v)}
@@ -83,9 +84,32 @@ function pick(){return Math.floor(Math.random()*BAG.total)+1<=BAG.black?"black":
 function render(){ $("total").textContent=total;$("blackSum").textContent=`개수: ${black}, 비율: ${ratio(black)}`;$("whiteSum").textContent=`개수: ${white}, 비율: ${ratio(white)}`;$("blackBar").style.width=pct(black)+"%";$("whiteBar").style.width=pct(white)+"%"}
 function renderHist(){if(!history.length){$("history").innerHTML='<div class="empty"><div>아직 실험 데이터가 없습니다.</div><div>바둑알을 뽑아 보세요!</div></div>';return}let rows=history.slice(-120).reverse().map(r=>`<tr><td>${r.round}</td><td><span class="mini ${r.color}"></span>${cname(r.color)}</td><td><span class="return">↻</span> 다시 넣음</td></tr>`).join("");$("history").innerHTML=`<table class="hist"><tbody>${rows}</tbody></table>`}
 async function ani(c){let s=sp(),f=$("fly");document.documentElement.style.setProperty("--draw-ms",s.draw+"ms");document.documentElement.style.setProperty("--return-ms",s.ret+"ms");f.className=`fly ${c} out`;f.textContent=stxt(c);await sleep(s.draw+s.wait);f.className=`fly ${c} ret`;f.textContent=stxt(c);await sleep(s.ret+8);f.className="fly";f.textContent=""}
-async function draw(n){if(running)return;running=true;disable(true);$("status").innerHTML=`<strong>뽑는 중...</strong> ${n}번 뽑기를 진행하고 있습니다.`;for(let i=0;i<n;i++){let c=pick();await ani(c);total++;if(c==="black")black++;else white++;history.push({round:total,color:c});render();renderHist();$("status").innerHTML=`<strong>${total}회차</strong> ${cname(c)} 바둑알을 뽑고 다시 넣었습니다.`}$("status").innerHTML=`<strong>완료!</strong> 전체 ${total}번 중 검은색 ${black}번, 흰색 ${white}번이 나왔습니다.`;disable(false);running=false}
+async function draw(n){
+  if(running)return;
+  running=true;disable(true);
+  $("status").innerHTML=`<strong>뽑는 중...</strong> ${n}번 뽑기를 진행하고 있습니다.`;
+  if(n>=500){
+    // 대규모 실험은 개별 애니메이션 없이 한 번에 집계하여 학습 흐름 유지
+    for(let i=0;i<n;i++){
+      let c=pick();total++;
+      if(c==="black")black++;else white++;
+      history.push({round:total,color:c});
+    }
+    render();renderHist();
+  }else{
+    for(let i=0;i<n;i++){
+      let c=pick();await ani(c);total++;
+      if(c==="black")black++;else white++;
+      history.push({round:total,color:c});
+      render();renderHist();
+      $("status").innerHTML=`<strong>${total}회차</strong> ${cname(c)} 바둑알을 뽑고 다시 넣었습니다.`;
+    }
+  }
+  $("status").innerHTML=`<strong>완료!</strong> 전체 ${total}번 중 검은색 ${black}번, 흰색 ${white}번이 나왔습니다.`;
+  disable(false);running=false;
+}
 function resetAll(){if(running)return;total=black=white=0;history=[];$("fly").className="fly";$("fly").textContent="";render();renderHist();$("status").innerHTML="<strong>초기화!</strong> 다시 바둑알을 뽑아 보세요."}
-$("draw1").onclick=()=>draw(1);$("draw10").onclick=()=>draw(10);$("draw100").onclick=()=>draw(100);$("reset").onclick=resetAll;$("speed").oninput=()=>$("speedText").textContent=sp().label;$("help").onclick=()=>$("modal").style.display="flex";$("close").onclick=()=>$("modal").style.display="none";$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").style.display="none"};document.onkeydown=e=>{if(e.key==="Escape")$("modal").style.display="none"};
+$("draw1").onclick=()=>draw(1);$("draw10").onclick=()=>draw(10);$("draw100").onclick=()=>draw(100);$("draw500").onclick=()=>draw(500);$("reset").onclick=resetAll;$("speed").oninput=()=>$("speedText").textContent=sp().label;$("help").onclick=()=>$("modal").style.display="flex";$("close").onclick=()=>$("modal").style.display="none";$("modal").onclick=e=>{if(e.target===$("modal"))$("modal").style.display="none"};document.onkeydown=e=>{if(e.key==="Escape")$("modal").style.display="none"};
 makeStones();$("speedText").textContent=sp().label;render();renderHist();
 </script>
 </body>
